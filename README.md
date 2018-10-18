@@ -5,6 +5,8 @@ I used [python-telegram-bot](https://github.com/python-telegram-bot/python-teleg
 
 You can find it on telegram: [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
+![intro](https://user-images.githubusercontent.com/25306548/47188769-aafb6980-d339-11e8-92f5-2cb4fc9fd43d.jpg)
+
 # Usage
 
 - /about
@@ -26,6 +28,8 @@ You can find it on telegram: [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 - /help
 
   To have more info about all of these commands.
+  
+![help](https://user-images.githubusercontent.com/25306548/47188679-522bd100-d339-11e8-97aa-67946a9095c6.jpg)
 
 There are also a lot of easter eggs (you can't find it in this code) that i wrote to have fun with my friends. Try to find them and enjoy!
 
