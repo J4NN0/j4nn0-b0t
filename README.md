@@ -1,7 +1,33 @@
 # j4nn0-b0t
-This is a python telegram bot hosted on [Heroku](https://www.heroku.com/)
+This is a python telegram bot hosted on [Heroku](https://www.heroku.com/).
 
-You can find it on telegram [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
+I used [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API.
+
+You can find it on telegram: [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
+
+# Usage
+
+- /about
+
+  To see info about developer.
+
+- /addtolist  /rmfromlist  /show_list  /clear_list
+
+  These commands allows you to edit your personal list: you can add/remove things or show all your list.
+  
+- /random
+
+  Will return a random number in range(min number, max number).
+  
+- /alarm
+
+  Set a timer and wait for your message. 
+
+- /help
+
+  To have more info about all of these commands.
+
+There are also a lot of easter eggs (you can't find it in this code) that i wrote to have fun with my friends. Try to find them and enjoy!
 
 # How to host BOT on Heroku
 
