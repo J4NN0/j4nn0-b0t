@@ -7,18 +7,51 @@ from telegram import  KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.error import NetworkError, Unauthorized
 
+from random import randint
+
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# START SHOPPING SECTION
+# ABOUT DEVELPER
+
+def about(bot, update):
+    keyboard = [[InlineKeyboardButton("GitHub", callback_data='git'),
+                 InlineKeyboardButton("Twitter", callback_data='twitter'),
+                 InlineKeyboardButton("Youtube", callback_data='youtube')]]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    update.message.reply_text('📌 Developed by @J4NN0.\n', reply_markup=reply_markup)
+
+def call_back(bot, update):
+    query = update.callback_query
+
+    if format(query.data) == 'git':
+        bot.edit_message_text(text="https://github.com/J4NN0",
+                              chat_id=query.message.chat_id,
+                              message_id=query.message.message_id)
+
+    if format(query.data) == 'twitter':
+        bot.edit_message_text(text="https://twitter.com/giannofederico",
+                              chat_id=query.message.chat_id,
+                              message_id=query.message.message_id)
+
+    if format(query.data) == 'youtube':
+        bot.edit_message_text(text="https://www.youtube.com/channel/UC_lI0Z3CnnWLKCZkOR8Z1oQ",
+                              chat_id=query.message.chat_id,
+                              message_id=query.message.message_id)
+
+# ABOUT DEVELOPER
+
+# LIST
 
 def addtolist(bot, update):
-    strings = update.message.text.lower().split
+    strings = update.message.text.lower().split()
 
-    if len(strings)>2:
+    if len(strings) >= 2:
         strings.remove('/addtolist')
-        fp = open("shopping_list", "a")
+        fp = open("shared/list.txt", "a")
         for s in strings:
             fp.write(s + "\n")
         fp.close()
@@ -26,103 +59,33 @@ def addtolist(bot, update):
     else:
         update.message.reply_text("Syntax error. Press /help for more info")
 
-def removefromlist(bot, update):
-    strings = update.message.text.lower().split
+def rmfromlist(bot, update):
+    strings = update.message.text.lower().split()
 
-    if len(strings)>2:
+    if len(strings) >= 2:
         strings.remove('/removefromlist')
-        fp = open("shopping_list", "a")
+        fp = open("shared/list.txt", "a")
+        #do stuff here
+        fp.close()
     else:
         update.message.reply_text("Syntax error. Press /help for more info")
 
-def show_shop(bot, update):
-    fp = open("shopping_list", "r")
+def show_list(bot, update):
+    fp = open("shared/list.txt", "r")
     data = fp.readlines()
     update.message.reply_text("Shopping list:\n")
     for line in data:
         update.message.reply_text(line)
 
-def clear_shop(bot, update):
-    fp = open("shopping_list", "w")
+def clear_list(bot, update):
+    fp = open("shared/list.txt", "w")
     fp.write('')
     fp.close()
     update.message.reply_text("Reset succefully")
 
-# END SHOPPING SECTION
+# LIST
 
-# START DEBTS SECTION
-
-def set_debts(bot, update):
-    string = update.message.text.lower().split()
-    
-    if len(string)==4:
-        fp = open(string[1], "a")
-        fp.write(string[2] + " " + string[3] + "\n")
-        fp.close()
-        update.message.reply_text("%s payed for %s an amount of %s€", string[1], string[2], string[3])
-    else:
-        update.message.reply_text("Syntax error. Press /help for more info")
-
-def rate_debts(bot, update):
-    string = update.message.text.lower().split()
-    dic = {}
-
-    if len(string)>2:
-        string.remove('/rate_debts')
-
-        for s in string:
-            for tmp in string:
-                dic[tmp] = 0 #reset dictionary
-            fp = open(s, "r")
-            data = fp.readlines()
-            for line in data:
-                words = line.split()
-                for name in string:
-                    if name == words[0]:
-                        dic[name] += int(words[1])
-            update.message.reply_text("❗️ " + s + " has to receive:")
-            for name in string:
-                if name != s:
-                    if name in dic:
-                        val = dic.get(name)
-                        update.message.reply_text("From " + name + " import " + str(val))
-            fp.close()
-
-    else:
-        update.message.reply_text("Syntax error. Press /help for more info")
-
-def show_debts(bot, update):
-    string = update.message.text.lower().split()
-
-    if len(string)>2:
-        string.remove('/show_debts')
-
-        for s in string:
-            fp = open(s, "r")
-            txt = fp.read()
-            fp.close()
-            update.message.reply_text("▶️ " + s)
-            update.message.reply_text(txt)
-    else:
-        update.message.reply_text("Syntax error. Press /help for more info")
-
-def clear_debts(bot, update):
-    string = update.message.text.lower().split()
-
-    if len(string)>2:
-        string.remove('/clear_debts')
-
-        for s in string:
-            fp = open(s, "w")
-            fp.write('')
-            fp.close()
-            update.message.reply_text("File " + s + " reset succefully")
-    else:
-        update.message.reply_text("Syntax error. Press /help for more info")
-
-# END DEBTS SECTION
-
-# START ALARM
+# ALARM
 
 def set_timer(bot, update, args, job_queue, chat_data):
     """Add a job to the queue."""
@@ -159,54 +122,47 @@ def alarm(bot, job):
     """Send the alarm message."""
     bot.send_message(job.context, text='Beep!')
 
-# END ALARM
+# ALARM
 
-# START ABOUT DEVELPER
+# RANDOM
 
-def about(bot, update):
-    keyboard = [[InlineKeyboardButton("GitHub", callback_data='git'),
-                 InlineKeyboardButton("Twitter", callback_data='twitter')]]
+def random_var(bot, update):
+    cmd = update.message.text.lower().split()
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
+    if len(cmd) == 2:
+        max_range = int(cmd[1])
+        r = randint(0, max_range)
+        r = str(r)
+        update.message.reply_text("Random value is: " + r)
+    else:
+        update.message.reply_text("Syntax error. Press /help for more info")
 
-    update.message.reply_text('📌 Developed by @J4NN0.\n', reply_markup=reply_markup)
+# RANDOM
 
-def call_back(bot, update):
-    query = update.callback_query
-    
-    if format(query.data) == 'git':
-        bot.edit_message_text(text="https://github.com/J4NN0",
-                            chat_id=query.message.chat_id,
-                            message_id=query.message.message_id)
-
-    if format(query.data) == 'twitter':
-        bot.edit_message_text(text="https://twitter.com/giannofederico",
-                            chat_id=query.message.chat_id,
-                            message_id=query.message.message_id)
-
-#END ABOUT DEVELOPER
-
-def start(bot, update):
-    update.message.reply_text("Hi " + update.message.from_user.first_name + "press /help for more info")
-
-def help(bot, update):
-    update.message.reply_text("⭕️ /about -> for more info\n"
-                              "\n 📝 SHOPPING 📝\n"
-                              "/addtolist <item-1> <item-2> ... -> to add items to the list\n"
-                              "/removefromlist <item-1> <item-2> ... -> to remove items from the list\n"
-                              "/show_shop -> to see all items\n"
-                              "/clear_shop -> to reset the shop\n"
-                              "\n 💸 DEBTS 💸 \n"
-                              "/set_debts <name1> <name2> <cost> -> to save that name1 payed cost for name2\n"
-                              "/rate_debts <name-1> <name-2> ... -> to calculate the debts\n"
-                              "/show_debts <name-1> <name-2> ... -> to see actual debts\n"
-                              "/clear_debts <name-1> <name-2> ... -> to reset all cost to zero\n"
-                              "\n ⏰ ALARM ⏰ \n"
-                              "/set <seconds> -> to set alarm\n"
-                              "/unset -> to unset alarm\n")
+# EASTER EGGS
+# ...
+# ...
+# ...
+# EASTER EGGS
 
 def echo(bot, update):
-    update.message.reply_text("Press /help for more info")
+    update.message.reply_text("Unknown command. Press /help for more info")
+
+def start(bot, update):
+    update.message.reply_text("Hi " + update.message.from_user.first_name + " press /help for more info")
+
+def help(bot, update):
+    update.message.reply_text("⭕️ /about -> info about developer\n"
+                              "\n 📝 LIST 📝\n"
+                              "/addtolist <item-1> <item-2> ... : to add items to the list\n"
+                              "/rmfromlist <item-1> <item-2> ... : to remove items from the list\n"
+                              "/show_list : to see all items\n"
+                              "/clear_list : to reset the list\n"
+                              "\n 🔀 RANDOM 🔀\n"
+                              "/random <number> : will return a random number in range(0, number)\n"
+                              "\n ⏰ ALARM ⏰ \n"
+                              "/set <seconds> : to set alarm\n"
+                              "/unset : to unset alarm\n")
 
 def error(bot, update, error):
     # Log Errors caused by Updates.
@@ -225,18 +181,15 @@ def main():
     dp.add_handler(CommandHandler('about', about))
     dp.add_handler(CallbackQueryHandler(call_back))
 
-    # Shopping
+    # List
     dp.add_handler(CommandHandler('addtolist', addtolist))
-    dp.add_handler(CommandHandler('removefromlist', removefromlist))
-    dp.add_handler(CommandHandler('show_shop', show_shop))
-    dp.add_handler(CommandHandler('clear_shop', clear_shop))
+    dp.add_handler(CommandHandler('rmfromlist', rmfromlist))
+    dp.add_handler(CommandHandler('show_list', show_list))
+    dp.add_handler(CommandHandler('clear_list', clear_list))
 
-    # Debts
-    dp.add_handler(CommandHandler('set_debts', set_debts))
-    dp.add_handler(CommandHandler('rate_debts', rate_debts))
-    dp.add_handler(CommandHandler('show_debts', show_debts))
-    dp.add_handler(CommandHandler('clear_debts', clear_debts))
-    
+    # Random
+    dp.add_handler(CommandHandler('random', random_var))
+
     # Alarm
     dp.add_handler(CommandHandler("set", set_timer, pass_args=True, pass_job_queue=True, pass_chat_data=True))
     dp.add_handler(CommandHandler("unset", unset, pass_chat_data=True))
@@ -255,3 +208,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
