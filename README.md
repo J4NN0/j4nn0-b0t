@@ -102,6 +102,8 @@ There are also a lot of easter eggs (you can't find it in this code) that i wrot
         
 10. Enjoy your bot
 
+/play guarantee
+
 # Official Heroku Guide
 
 - [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
