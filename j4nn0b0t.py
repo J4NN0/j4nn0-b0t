@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sqlite3
+from random import randint
 import logging
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, MessageHandler, Filters
 from telegram import  KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.error import NetworkError, Unauthorized
-
-from random import randint
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -44,18 +44,29 @@ def call_back(bot, update):
 
 # ABOUT DEVELOPER
 
-# LIST
+# SQL LIST.DB
 
 def addtolist(bot, update):
     strings = update.message.text.lower().split()
 
     if len(strings) >= 2:
         strings.remove('/addtolist')
-        fp = open("shared/list.txt", "a")
+
+        # Connecting to the SQL database
+        conn = sqlite3.connect('database/list.db')
+        c = conn.cursor()
+
+        chat_id = update.message.chat_id
+        chat_id = str(chat_id)
+        username = update.message.from_user.username
+
         for s in strings:
-            fp.write(s + "\n")
-        fp.close()
-        update.message.reply_text("All items are added to the list")
+            c.execute("INSERT INTO REMINDERS VALUES('"+chat_id+"','"+s+"','"+username+"')")
+
+        conn.commit()
+        conn.close()
+
+        update.message.reply_text("All items are added to your list")
     else:
         update.message.reply_text("Syntax error. Press /help for more info")
 
@@ -63,27 +74,69 @@ def rmfromlist(bot, update):
     strings = update.message.text.lower().split()
 
     if len(strings) >= 2:
-        strings.remove('/removefromlist')
-        fp = open("shared/list.txt", "a")
-        #do stuff here
-        fp.close()
+        strings.remove('/rmfromlist')
+
+        # Connecting to the SQL database
+        conn = sqlite3.connect('database/list.db')
+        c = conn.cursor()
+
+        chat_id = update.message.chat_id
+        chat_id = str(chat_id)
+
+        report = "❗Report\n✔️ Items successfully deleted from your list:\n"
+        err = "\n✖️No items named:\n"
+
+        for s in strings:
+            rc = c.execute("DELETE FROM REMINDERS WHERE CHATID='"+chat_id+"' AND ITEM='"+s+"'").rowcount
+            if rc <= 0:
+                err += s + "\n"
+            else:
+                report += s + "\n"
+
+        conn.commit()
+        conn.close()
+
+        update.message.reply_text(report + err)
     else:
         update.message.reply_text("Syntax error. Press /help for more info")
 
 def show_list(bot, update):
-    fp = open("shared/list.txt", "r")
-    data = fp.readlines()
-    update.message.reply_text("Shopping list:\n")
-    for line in data:
-        update.message.reply_text(line)
+    # Connecting to the SQL database
+    conn = sqlite3.connect('database/list.db')
+    c = conn.cursor()
+
+    chat_id = update.message.chat_id
+    chat_id = str(chat_id)
+
+    c.execute("SELECT ITEM FROM REMINDERS WHERE CHATID='" + chat_id + "'")
+    rows = c.fetchall()
+    if len(rows) > 0:
+        items = ""
+        for row in rows:
+            items += row[0] + "\n"
+
+        username = update.message.from_user.username
+        update.message.reply_text(username + "'s list:\n" + items)
+    else:
+        update.message.reply_text("No items in your list")
 
 def clear_list(bot, update):
-    fp = open("shared/list.txt", "w")
-    fp.write('')
-    fp.close()
-    update.message.reply_text("Reset succefully")
+    # Connecting to the SQL database
+    conn = sqlite3.connect('database/list.db')
+    c = conn.cursor()
 
-# LIST
+    chat_id = update.message.chat_id
+    chat_id = str(chat_id)
+
+    if c.execute("DELETE FROM REMINDERS WHERE CHATID='" + chat_id + "'").rowcount > 0:
+        update.message.reply_text("List delete successfully")
+    else:
+        update.message.reply_text("Nothing to delete")
+
+    conn.commit()
+    conn.close()
+    
+# SQL LIST.DB
 
 # ALARM
 
@@ -181,7 +234,7 @@ def main():
     dp.add_handler(CommandHandler('about', about))
     dp.add_handler(CallbackQueryHandler(call_back))
 
-    # List
+    # SQL list.db
     dp.add_handler(CommandHandler('addtolist', addtolist))
     dp.add_handler(CommandHandler('rmfromlist', rmfromlist))
     dp.add_handler(CommandHandler('show_list', show_list))
