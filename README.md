@@ -1,11 +1,19 @@
 # j4nn0-b0t
 This is a python telegram bot hosted on [Heroku](https://www.heroku.com/).
 
-I used [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API.
+I used [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html).
 
 You can find it on telegram: [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
 ![intro](https://user-images.githubusercontent.com/25306548/47188769-aafb6980-d339-11e8-92f5-2cb4fc9fd43d.jpg)
+
+# Database
+
+You need to 
+
+    import sqlite3
+    
+and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easly manage (create, delete and more) the database. 
 
 # Usage
 
@@ -16,6 +24,7 @@ You can find it on telegram: [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 - /addtolist  /rmfromlist  /show_list  /clear_list
 
   These commands allows you to edit your personal list: you can add/remove things or show all your list.
+  This function modify the database in order to save and show data you added.
   
 - /random
 
