@@ -42,8 +42,8 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     
 - Info about bot
     - /help:  to have info about all commands
-  
-![help](https://user-images.githubusercontent.com/25306548/47188679-522bd100-d339-11e8-97aa-67946a9095c6.jpg)
+    
+##### Easter egg
 
 *There are also a lot of easter eggs (you can't find it in this code) that i wrote to have fun with my friends. Try to find them and enjoy!*
 
