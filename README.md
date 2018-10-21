@@ -5,8 +5,6 @@ I used [python-telegram-bot](https://github.com/python-telegram-bot/python-teleg
 
 You can find it on telegram: [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
-![intro](https://user-images.githubusercontent.com/25306548/47188769-aafb6980-d339-11e8-92f5-2cb4fc9fd43d.jpg)
-
 # Database
 
 You need to 
