@@ -15,29 +15,29 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
 
 # BOT usage
 
-- Developer
+- ⭕ Developer
     - /about: to see info about developer
     
-- List
+- 📝 List
     - /addtolist <items>: to add one or several items to your personal list (to do list, reminders or what you want)
     - /rmfromlist <items>: to remove  one or several itmes from your personal list
     - /show_list: it shows items that you added to your personal list
     - /clear_list: to delete all items from your pesonal list
 
-- Message from strangers
+- ❓Message from strangers
     - /topic: to see topic that contains at least one message from a stranger
     - /msg [-user] <topic> <text>: to sent a message that everyone can read; -user is optional, if inserted your username will be showed with the message you sent
     - /showmsg <topic>: to see message about a specific topic
     - /delmsg <topic>: to delete a your message that you posted in that topic
     - /personalmsg: to check if someone tag you in a topic or message (tag in telegram: @username)
   
-- Data store
+- ⚠ Data store ⚠
     - Work in progress ...
 
-- Random value
+- 🔀 Random value
     - /random <number>: it will return a random number in range(0, number)
 
-- Alarm
+- ⏰ Alarm
     - /timer <seconds>: to set a timer and wait for your message
     
 - Info about bot
