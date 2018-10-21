@@ -13,30 +13,39 @@ You need to
 
     import sqlite3
     
-and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easly manage (create, delete and more) the database. 
+and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easly manage (create, delete, modify and much more) the database. 
 
-# Usage
+# BOT usage
 
-- /about
+- Developer
+    - /about: to see info about developer
+    
+- List
+    - /addtolist <items>: to add one or several items to your personal list (to do list, reminders or what you want)
+    - /rmfromlist <items>: to remove  one or several itmes from your personal list
+    - /show_list: it shows items that you added to your personal list
+    - /clear_list: to delete all items from your pesonal list
 
-  To see info about developer.
-
-- /addtolist  /rmfromlist  /show_list  /clear_list
-
-  These commands allows you to edit your personal list: you can add/remove things or show all your list.
-  This function modify the database in order to save and show data you added.
+- Message from strangers
+    - /topic: to see topic that contains at least one message from a stranger
+    - /msg [-user] <topic> <text>: to sent a message that everyone can read; -user is optional, if inserted your username will be showed with the message you sent
+    - /showmsg <topic>: to see message about a specific topic
+    - /delmsg <topic>: to delete a your message that you posted in that topic
+    - /personalmsg: to check if someone tag you in a topic or message (tag in telegram: @username)
   
-- /random
+- Data store
+    [ ] - Work in progress
+    [ ] - Upload file
+    [ ] - Download file
+    
+- Random value
+    - /random <number>: it will return a random number in range(0, number)
 
-  Will return a random number in range(min number, max number).
-  
-- /alarm
-
-  Set a timer and wait for your message. 
-
-- /help
-
-  To have more info about all of these commands.
+- Alarm
+    - /timer <seconds>: to set a timer and wait for your message
+    
+- Info about bot
+    - /help:  to have info about all commands
   
 ![help](https://user-images.githubusercontent.com/25306548/47188679-522bd100-d339-11e8-97aa-67946a9095c6.jpg)
 
