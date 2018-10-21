@@ -19,16 +19,16 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     - /about: to see info about developer
     
 - 📝 List
-    - /addtolist <items>: to add one or several items to your personal list (to do list, reminders or what you want)
-    - /rmfromlist <items>: to remove  one or several itmes from your personal list
+    - /addtolist \<items>: to add one or several items to your personal list (to do list, reminders or what you want)
+    - /rmfromlist \<items>: to remove  one or several itmes from your personal list
     - /show_list: it shows items that you added to your personal list
     - /clear_list: to delete all items from your pesonal list
 
 - ❓Message from strangers
     - /topic: to see topic that contains at least one message from a stranger
-    - /msg [-user] <topic> <text>: to sent a message that everyone can read; -user is optional, if inserted your username will be showed with the message you sent
-    - /showmsg <topic>: to see message about a specific topic
-    - /delmsg <topic>: to delete a your message that you posted in that topic
+    - /msg [-user] \<topic> \<text>: to sent a message that everyone can read; -user is optional, if inserted your username will be showed with the message you sent
+    - /showmsg \<topic>: to see message about a specific topic
+    - /delmsg \<topic>: to delete a your message that you posted in that topic
     - /tagmsg: to check if someone tag you in a topic or message (tag in telegram: @username)
     - /personalmsg: to see all messages you sent
   
@@ -36,10 +36,10 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     - Work in progress ...
 
 - 🔀 Random value
-    - /random <number>: it will return a random number in range(0, number)
+    - /random \<number>: it will return a random number in range(0, number)
 
 - ⏰ Alarm
-    - /timer <seconds>: to set a timer and wait for your message
+    - /timer \<seconds>: to set a timer and wait for your message
     
 - Info about bot
     - /help:  to have info about all commands
