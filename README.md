@@ -29,7 +29,8 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     - /msg [-user] <topic> <text>: to sent a message that everyone can read; -user is optional, if inserted your username will be showed with the message you sent
     - /showmsg <topic>: to see message about a specific topic
     - /delmsg <topic>: to delete a your message that you posted in that topic
-    - /personalmsg: to check if someone tag you in a topic or message (tag in telegram: @username)
+    - /tagmsg: to check if someone tag you in a topic or message (tag in telegram: @username)
+    - /personalmsg: to see all messages you sent
   
 - ⚠ Data store ⚠
     - Work in progress ...
