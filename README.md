@@ -34,10 +34,8 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     - /personalmsg: to check if someone tag you in a topic or message (tag in telegram: @username)
   
 - Data store
-    [ ] - Work in progress
-    [ ] - Upload file
-    [ ] - Download file
-    
+    - Work in progress ...
+
 - Random value
     - /random <number>: it will return a random number in range(0, number)
 
