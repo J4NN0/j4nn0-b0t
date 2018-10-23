@@ -59,6 +59,10 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
        runtime.txt
        requirements.txt
        
+    Or clone the project
+    
+        git clone https://github.com/J4NN0/j4nn0-b0t.git
+       
    You can also have a "app.json" schema useful to declare environment variables, add-ons, and other information required to run an app on Heroku. More info [here](https://devcenter.heroku.com/articles/app-json-schema)
 
 4. Put inside "Procfile"
