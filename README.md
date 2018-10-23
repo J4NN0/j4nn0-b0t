@@ -119,6 +119,11 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
         
 10. Enjoy your bot
 
-# Official Heroku Guide
+#### Official Heroku Guide
 
 - [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
+
+# Utility
+
+- [Exstensions](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot)
+- [Code snippets](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Code-snippets#general-code-snippets)
