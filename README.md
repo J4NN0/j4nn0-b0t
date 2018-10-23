@@ -127,3 +127,4 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
 
 - [Exstensions](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot)
 - [Code snippets](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Code-snippets#general-code-snippets)
+- [Telegram Bot’s documentation](https://python-telegram-bot.readthedocs.io/en/stable/index.html)
