@@ -1,9 +1,9 @@
 # j4nn0-b0t
-This is a python telegram bot hosted on [Heroku](https://www.heroku.com/).
+This is a python Telegram BOT hosted on [Heroku](https://www.heroku.com/).
 
 I used [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html).
 
-You can find it on telegram: [J4NN0_Bot](http://telegram.me/J4NN0_Bot)
+You can find it on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
 # Database
 
@@ -11,7 +11,7 @@ You need to
 
     import sqlite3
     
-and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easly manage (create, delete, modify and much more) the database. 
+and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easly manage (create, delete, modify and much more) the database. 
 
 # BOT usage
 
@@ -59,7 +59,7 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
        runtime.txt
        requirements.txt
        
-    Or clone the project
+    Or clone the repo
     
         git clone https://github.com/J4NN0/j4nn0-b0t.git
        
@@ -125,7 +125,7 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
 
 # Utility
 
-- [Exstensions](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot)
-- [Code snippets](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Code-snippets#general-code-snippets)
+- [First steeps](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot)
 - [Telegram Bot’s documentation](https://python-telegram-bot.readthedocs.io/en/stable/index.html)
 - [Telegram Bot API](https://core.telegram.org/bots/api#forcereply)
+- [Code snippets](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Code-snippets#general-code-snippets)
