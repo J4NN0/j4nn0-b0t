@@ -78,8 +78,6 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
        python-3.6.6
 
 6. Specify explicit dependency versions inside "requirements.txt"
-    
-       python-3.6.6
    
    For example i'm using [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API.
    So my file "requirements.txt" will contain 
@@ -108,7 +106,7 @@ and I aslo suggest you to download [DB Browser for SQLite](https://sqlitebrowser
    Push your code (or deploy changes) into heroku app
    
        git add .
-       git commit -m "message"
+       git commit -m 'message'
        git push heroku master
 
 8. Run your worker
