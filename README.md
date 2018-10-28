@@ -31,9 +31,6 @@ and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     - /delmsg \<topic>: to delete a your message that you posted in that topic
     - /tagmsg: to check if someone tag you in a topic or message (tag in telegram: @username)
     - /personalmsg: to see all messages you sent
-  
-- ⚠ Data store ⚠
-    - Work in progress ...
 
 - 🔀 Random value
     - /random \<number>: it will return a random number in range(0, number)
@@ -44,7 +41,7 @@ and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser
 - Info about bot
     - /help:  to have info about all commands
     
-##### Easter egg
+#### Easter egg
 
 *There are also a lot of easter eggs (you can't find it in this code) that i wrote to have fun with my friends. Try to find them and enjoy!*
 
