@@ -3,14 +3,14 @@
 
 import sqlite3
 from random import randint
+
 import logging
+from telegram import ChatAction, ParseMode, ForceReply
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, MessageHandler, Filters
-from telegram import  KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
+from telegram import KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.error import NetworkError, Unauthorized
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # ABOUT DEVELPER
@@ -47,6 +47,8 @@ def call_back(bot, update):
 # SQL REMINDERS
 
 def addtolist(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     strings = update.message.text.lower().split()
 
     if len(strings) >= 2:
@@ -71,6 +73,8 @@ def addtolist(bot, update):
         update.message.reply_text("Syntax error. Press /help for more info")
 
 def rmfromlist(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     strings = update.message.text.lower().split()
 
     if len(strings) >= 2:
@@ -101,6 +105,8 @@ def rmfromlist(bot, update):
         update.message.reply_text("Syntax error. Press /help for more info")
 
 def show_list(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     # Connecting to the SQL database
     conn = sqlite3.connect('database/list.db')
     c = conn.cursor()
@@ -122,6 +128,8 @@ def show_list(bot, update):
         update.message.reply_text("No items in your list")
 
 def clear_list(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     # Connecting to the SQL database
     conn = sqlite3.connect('database/list.db')
     c = conn.cursor()
@@ -142,6 +150,8 @@ def clear_list(bot, update):
 # SQL STRANGERS
 
 def topic(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     # Connecting to the SQL database
     conn = sqlite3.connect('database/strangers.db')
     c = conn.cursor()
@@ -163,6 +173,8 @@ def topic(bot, update):
         update.message.reply_text("There is no topic")
 
 def stranger_msg(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     strings = update.message.text.lower().split()
 
     if len(strings) >= 3:
@@ -202,6 +214,8 @@ def stranger_msg(bot, update):
         update.message.reply_text("Syntax error. Press /help for more info")
 
 def show_msg(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     strings = update.message.text.lower().split()
 
     if len(strings) == 2:
@@ -223,6 +237,8 @@ def show_msg(bot, update):
         update.message.reply_text("Syntax error. Press /help for more info")
 
 def del_stranger_msg(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     strings = update.message.text.lower().split()
 
     if len(strings) == 2:
@@ -246,6 +262,8 @@ def del_stranger_msg(bot, update):
         update.message.reply_text("Syntax error. Press /help for more info")
 
 def tag_msg(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     # Connecting to the SQL database
     conn = sqlite3.connect('database/strangers.db')
     c = conn.cursor()
@@ -269,6 +287,8 @@ def tag_msg(bot, update):
         update.message.reply_text("📭 No topic citation\n📥 No messages citation\nNo one cited you 😢")
 
 def personal_msg(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     username = update.message.from_user.username
 
     # Connecting to the SQL database
@@ -289,6 +309,8 @@ def personal_msg(bot, update):
 # ALARM
 
 def set_timer(bot, update, args, job_queue, chat_data):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     """Add a job to the queue."""
     chat_id = update.message.chat_id
     try:
@@ -308,6 +330,8 @@ def set_timer(bot, update, args, job_queue, chat_data):
         update.message.reply_text('Usage: /set <seconds>')
 
 def unset(bot, update, chat_data):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     """Remove the job if the user changed their mind."""
     if 'job' not in chat_data:
         update.message.reply_text('You have no active timer')
@@ -328,6 +352,8 @@ def alarm(bot, job):
 # RANDOM
 
 def random_var(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
     cmd = update.message.text.lower().split()
 
     if len(cmd) == 2:
@@ -345,24 +371,37 @@ def random_var(bot, update):
 # ...
 # EASTER EGGS
 
-def echo(bot, update):
+def manage_text(bot, update):
+    bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+
+    update.message.reply_text("Sorry I can't understand. Press /help for more info")
+
+def manage_command(bot, update):
     update.message.reply_text("Unknown command. Press /help for more info")
 
 def start(bot, update):
     update.message.reply_text("Hi " + update.message.from_user.first_name + " press /help for more info")
 
 def help(bot, update):
-    update.message.reply_text("⭕️ /about -> info about developer\n"
-                              "\n 📝 LIST 📝\n"
-                              "/addtolist <item-1> <item-2> ... : to add items to the list\n"
-                              "/rmfromlist <item-1> <item-2> ... : to remove items from the list\n"
-                              "/show_list : to see all items\n"
-                              "/clear_list : to reset the list\n"
-                              "\n 🔀 RANDOM 🔀\n"
-                              "/random <number> : will return a random number in range(0, number)\n"
-                              "\n ⏰ ALARM ⏰ \n"
-                              "/set <seconds> : to set alarm\n"
-                              "/unset : to unset alarm\n")
+    update.message.reply_text("⭕️ /about: info about developer\n"
+                              "\n📝 LIST 📝\n"
+                              "/addtolist <items>: to add items to the list\n"
+                              "/rmfromlist <items>: to remove items from the list\n"
+                              "/show_list: to see all items\n"
+                              "/clear_list: to reset the list\n"
+                              "\n❓STRANGER'S MESSAGE❓\n"
+                              "/topic: to see topic with messages\n"
+                              "/msg [-user] <topic> <text>: to send a message that everyone can read;\n"
+                                    "-user is optional, if inserted your username will be showed with the message\n"
+                              "/showmsg <topic>: to see message about that topic\n"
+                              "/delmsg <topic>: to delete your message\n"
+                              "/tagmsg: to check if someone tag you in a topic or message (at username)\n"
+                              "/personalmsg: to see all messages you sent\n"
+                              "\n🔀 RANDOM 🔀\n"
+                              "/random <number>: will return a random number in range(0, number)\n"
+                              "\n⏰ ALARM ⏰ \n"
+                              "/set <seconds>: to set alarm\n"
+                              "/unset: to unset alarm\n")
 
 def error(bot, update, error):
     # Log Errors caused by Updates.
@@ -402,12 +441,9 @@ def main():
     dp.add_handler(CommandHandler("set", set_timer, pass_args=True, pass_job_queue=True, pass_chat_data=True))
     dp.add_handler(CommandHandler("unset", unset, pass_chat_data=True))
 
-    # Easter eggs
-    # ...
-    # ...
-    
     # On noncommand i.e message
-    dp.add_handler(MessageHandler(Filters.text, echo))
+    dp.add_handler(MessageHandler(Filters.text, manage_text))
+    dp.add_handler(MessageHandler(Filters.command, manage_command))
 
     # Log all errors
     dp.add_error_handler(error)
@@ -420,4 +456,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
