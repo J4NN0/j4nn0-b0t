@@ -5,9 +5,9 @@ Python Telegram BOT able to:
 2. Set an alarm: when time is up the BOT will remind you what you asked for.
 3. Exchange messages between strangers: store a message in unknown way. You can also send it for a certain person. In this way he/she will be able to read it but he/she will never know the writer of the message.  
 
-This is a python Telegram BOT hosted on [Heroku](https://www.heroku.com/).
+The BOT hosted on [Heroku](https://www.heroku.com/).
 
-I used [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html).
+For its development I used [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html).
 
 You can find it on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
