@@ -1,5 +1,7 @@
 # j4nn0-b0t
 
+[![https://telegram.me/J4NN0](https://img.shields.io/badge/💬_Telegram-J4NN0-blue.svg)](https://telegram.me/J4NN0) [![https://telegram.me/J4NN0_Bot](https://img.shields.io/badge/💬_Bot_Telegram-J4NN0_Bot-blue.svg)](https://telegram.me/J4NN0_Bot)
+
 Python Telegram BOT able to:
 1. Store and retrive data from a database: you can save what you want and read it when you want. 
 2. Set an alarm: when time is up the BOT will remind you what you asked for.
