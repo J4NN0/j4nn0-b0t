@@ -2,16 +2,16 @@
 
 [![https://telegram.me/J4NN0](https://img.shields.io/badge/💬_Telegram-J4NN0-blue.svg)](https://telegram.me/J4NN0) [![https://telegram.me/J4NN0_Bot](https://img.shields.io/badge/💬_Bot_Telegram-J4NN0_Bot-blue.svg)](https://telegram.me/J4NN0_Bot) [![https://pypi.org/project/python-telegram-bot/](https://img.shields.io/pypi/pyversions/python-telegram-bot.svg)](https://pypi.org/project/python-telegram-bot/) [![https://www.gnu.org/licenses/lgpl-3.0.html](https://img.shields.io/pypi/l/python-telegram-bot.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 
-Python Telegram BOT able to:
+Python Telegram BOT main features:
 1. Store and retrive data from a database: you can save what you want and read it when you want. 
 2. Set an alarm: when time is up the BOT will remind you what you asked for.
 3. Exchange messages between strangers: store a message in unknown way. You can also send it for a certain person. In this way he/she will be able to read it but he/she will never know the writer of the message.  
 
-The BOT hosted on [Heroku](https://www.heroku.com/).
+The BOT is hosted on [Heroku](https://www.heroku.com/).
 
 For its development I used [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html).
 
-You can find it on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
+Check it out on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
 # Database
 
@@ -19,7 +19,7 @@ You need to
 
     import sqlite3
     
-and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easly manage (create, delete, modify and much more) the database. 
+and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easly manage (create, read, delete, modifiy, etc.) the databases. 
 
 # BOT usage
 
