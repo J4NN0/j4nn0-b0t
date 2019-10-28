@@ -32,7 +32,7 @@ and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     - /show_list: it shows items that you added to your personal list
     - /clear_list: to delete all items from your pesonal list
 
-- ❓Message from strangers
+- ❓ Message from strangers
     - /topic: to see topic that contains at least one message from a stranger
     - /msg [-user] \<topic> \<text>: to sent a message that everyone can read; -user is optional, if inserted your username will be showed with the message you sent
     - /showmsg \<topic>: to see message about a specific topic
@@ -41,7 +41,7 @@ and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser
     - /personalmsg: to see all messages you sent
 
 - 🔀 Random value
-    - /random \<number>: it will return a random number in range(0, number)
+    - /random \<number>: it will return a random number between 0 and <number>
 
 - ⏰ Alarm
     - /timer \<seconds>: to set a timer and wait for your message
