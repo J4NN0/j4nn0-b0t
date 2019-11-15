@@ -59,7 +59,7 @@ and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser
 2. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up) and [git](https://git-scm.com/downloads)
 3. Create a folder and put inside it
         
-       script.py
+       bot.py
        Procfile
        runtime.txt
        requirements.txt
@@ -70,11 +70,12 @@ and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser
 
        worker: python script.py
    
-5. You may select your python version and put it in "runtime.txt"
+5. Check your python version with
 
        python --version
         
-   For example if the Python version is 3.6.6 just put inside the file:
+   And put it in "runtime.txt". 
+   For example, if the Python version is 3.6.6 just put inside the file:
    
        python-3.6.6
 
