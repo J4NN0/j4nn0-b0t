@@ -13,6 +13,12 @@ For its development I used [python-telegram-bot](https://github.com/python-teleg
 
 Check it out on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
+# Table of Contents
+- [Database](https://github.com/J4NN0/j4nn0-b0t#database)
+- [BOT usage](https://github.com/J4NN0/j4nn0-b0t#bot-usage)
+- [How to host BOT on Heroku](https://github.com/J4NN0/j4nn0-b0t#how-to-host-bot-on-heroku)
+- [Utility](https://github.com/J4NN0/j4nn0-b0t#utility)
+
 # Database
 
 You need to 
@@ -127,7 +133,7 @@ and I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser
 
 #### Official Heroku Guide
 
-- [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
+Checkout also the offical heroku guide: [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
 
 # Utility
 
