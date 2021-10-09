@@ -21,9 +21,15 @@ Check it out on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 
 # Database
 
-You need to 
+### list.db
 
-    import sqlite3
+It is composed by a single table, `REMINDERS`:
+
+- `CHATID`: chat id for that user.
+- `USRNAME`: username of the user.
+- `ITEM`: the item added by the user.
+
+Every time an user add/remove one or more item(s), these are added/removed to/from the db.
     
 I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org) to easily manage (create, read, delete, modify, etc.) the database(s). 
 
