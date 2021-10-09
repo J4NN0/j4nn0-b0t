@@ -2,7 +2,7 @@
 
 [![https://telegram.me/J4NN0](https://img.shields.io/badge/💬_Telegram-J4NN0-blue.svg)](https://telegram.me/J4NN0) [![https://telegram.me/J4NN0_Bot](https://img.shields.io/badge/💬_Bot_Telegram-J4NN0_Bot-blue.svg)](https://telegram.me/J4NN0_Bot) [![https://pypi.org/project/python-telegram-bot/](https://img.shields.io/pypi/pyversions/python-telegram-bot.svg)](https://pypi.org/project/python-telegram-bot/) [![https://www.gnu.org/licenses/lgpl-3.0.html](https://img.shields.io/pypi/l/python-telegram-bot.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 
-The BOT is hosted on [Heroku](https://www.heroku.com/) and it has been tested using Python `v3.6.6`. Also, [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html) are needed.  
+The BOT is hosted on [Heroku](https://www.heroku.com/) and it has been tested using Python `v3.9.7`. Also, [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html) are needed.  
 
 J4NN0 BOT main features:
 1. Store and retrieve data from a database: you can save/delete/show items on your personal list. 
