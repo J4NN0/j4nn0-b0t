@@ -119,11 +119,11 @@ There are also a lot of Easter eggs (you can't find them in this code) that i wr
 
 11. Run your worker
 
-       heroku ps:scale worker=1
+        heroku ps:scale worker=1
 
 12. Check logs with and enjoy your bot
 
-       heroku logs --tail
+        heroku logs --tail
 
 #### Official Heroku Guide
 
