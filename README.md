@@ -19,7 +19,7 @@ Check it out on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 - [Database](https://github.com/J4NN0/j4nn0-b0t#database)
 - [BOT usage](https://github.com/J4NN0/j4nn0-b0t#bot-usage)
 - [How to host BOT on Heroku](https://github.com/J4NN0/j4nn0-b0t#how-to-host-bot-on-heroku)
-- [Utility](https://github.com/J4NN0/j4nn0-b0t#utility)
+- [Resources](https://github.com/J4NN0/j4nn0-b0t#resources)
 
 # Database
 
@@ -129,7 +129,7 @@ There are also a lot of Easter eggs (you can't find them in this code) that i wr
 
 Checkout also the offical heroku guide: [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up).
 
-# Utility
+# Resources
 
 - [First steps](https://github.com/python-telegram-bot/python-telegram-bot/wiki/Extensions-%E2%80%93-Your-first-Bot)
 - [Telegram Bot’s documentation](https://python-telegram-bot.readthedocs.io/en/stable/index.html)
