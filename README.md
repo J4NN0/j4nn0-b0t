@@ -1,6 +1,8 @@
 # j4nn0-b0t
 
-[![https://telegram.me/J4NN0](https://img.shields.io/badge/💬_Telegram-J4NN0-blue.svg)](https://telegram.me/J4NN0) [![https://telegram.me/J4NN0_Bot](https://img.shields.io/badge/💬_Bot_Telegram-J4NN0_Bot-blue.svg)](https://telegram.me/J4NN0_Bot) [![https://pypi.org/project/python-telegram-bot/](https://img.shields.io/pypi/pyversions/python-telegram-bot.svg)](https://pypi.org/project/python-telegram-bot/) [![https://www.gnu.org/licenses/lgpl-3.0.html](https://img.shields.io/pypi/l/python-telegram-bot.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
+[![https://telegram.me/J4NN0_Bot](https://img.shields.io/badge/💬_Bot_Telegram-J4NN0_Bot-blue.svg)](https://telegram.me/J4NN0_Bot) 
+[![https://pypi.org/project/python-telegram-bot/](https://img.shields.io/pypi/pyversions/python-telegram-bot.svg)](https://pypi.org/project/python-telegram-bot/)
+[![https://www.gnu.org/licenses/lgpl-3.0.html](https://img.shields.io/pypi/l/python-telegram-bot.svg)](https://www.gnu.org/licenses/lgpl-3.0.html)
 
 The BOT is hosted on [Heroku](https://www.heroku.com/) and it has been tested using Python `v3.9.7`. Also, [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API and [sqlite3](https://docs.python.org/2/library/sqlite3.html) are needed.  
 
@@ -45,93 +47,87 @@ I also suggest you to download [DB Browser for SQLite](https://sqlitebrowser.org
     - `/clear_list`: to delete all items from your personal list.
 
 - 🔀 Random value
-    - `/random <number>`: it will return a random number between 0 and <number>
+    - `/random <number>`: it will return a random number between 0 and <number>.
 
 - ⏰ Alarm
-    - `/timer <seconds>`: to set a timer and wait for your message
+    - `/timer <seconds>`: to set a timer and wait for your message.
     
-- Info about bot
-    - `/help`:  to have info about all commands
+- 🤖 Info about bot
+    - `/help`:  to have info about all commands.
     
 #### Easter egg
 
-*There are also a lot of Easter eggs (you can't find it in this code) that i wrote to have fun with my friends. Try to find them and enjoy!*
+There are also a lot of Easter eggs (you can't find them in this code) that i wrote to have fun with my friends. Try to find them and enjoy!
 
 # How to host BOT on Heroku
 
-1. Register on [Heroku](https://www.heroku.com/)
-2. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up) and [git](https://git-scm.com/downloads)
-3. Create a folder and put inside it
+1. Register on [Heroku](https://www.heroku.com/).
+2. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up) and [git](https://git-scm.com/downloads).
+3. Create a project folder and put inside it the following files
         
        bot.py
        Procfile
        runtime.txt
        requirements.txt
        
-   You can also have a "app.json" schema useful to declare environment variables, add-ons, and other information required to run an app on Heroku. More info [here](https://devcenter.heroku.com/articles/app-json-schema)
+   You can also have a `app.json` schema in order to declare environment variables, add-ons, and other information required to run an app on Heroku. More info [here](https://devcenter.heroku.com/articles/app-json-schema).
 
-4. Put inside "Procfile"
+4. Put inside `Procfile`
 
        worker: python script.py
    
-5. Check your python version with
-
-       python --version
-        
-   And put it in "runtime.txt". 
-   For example, if the Python version is 3.6.6 just put inside the file:
+5. Put the python version you want to use in `runtime.txt`. 
+   
+    For instance, if you want to use Python `v3.6.6` just put inside the file:
    
        python-3.6.6
 
-6. Specify explicit dependency versions inside "requirements.txt"
+6. Specify explicit dependencies versions inside `requirements.txt`.
    
-   For example i'm using [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API.
-   So my file "requirements.txt" will contain 
+   For instance, I'm using [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot) API.
+   So my file `requirements.txt` will look like 
    
        python-telegram-bot==8.1.1
        
-   To update this file, you can use the pip freeze command in your active virtual environment:
+   To update this file, you can use the `pip freeze` command in your active virtual environment:
    
        pip freeze > requirements.txt
        
-   More info [here](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime) 
+   More info [here](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime).
    
-7. Now in terminal 
-   If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key
+7. At this stage, if you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key
    
        heroku login
    
-   Create git repository   
+8. Create git repository   
 
        git init
            
-    Or clone this repo
+    or clone this repo
     
        git clone https://github.com/J4NN0/j4nn0-b0t.git
    
-   Create heroku app
+9. Create heroku app
    
        heroku create
    
-   Push your code (or deploy changes) into heroku app
+10. Push your code (or deploy changes) into heroku app
    
-       git add .
-       git commit -m 'message'
-       git push heroku master
+        git add .
+        git commit -m 'message'
+        git push heroku master
 
-8. Run your worker
+11. Run your worker
 
        heroku ps:scale worker=1
 
-9. Check logs with
+12. Check logs with and enjoy your bot
 
        heroku logs --tail
-        
-10. Enjoy your bot
 
 #### Official Heroku Guide
 
-Checkout also the offical heroku guide: [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
+Checkout also the offical heroku guide: [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python#set-up).
 
 # Utility
 
