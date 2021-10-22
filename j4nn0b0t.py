@@ -16,33 +16,12 @@ def manage_text(bot, update):
 
     msg = update.message.text.lower()
 
-    if msg == 'vale':
-        update.message.reply_text('/MinchiaGuaddi?')
-    elif msg == 'nino':
-        update.message.reply_text("L'hai trollata Zac: /zacTroll")
-    elif msg == 'mariangela':
-        update.message.reply_text('Ci sono novità?')
-    elif msg == 'rerum':
-        update.message.reply_text('Welcome to the /LeagueOfRerum')
-    elif msg == 'cico':
-        update.message.reply_text('Pare morto: /oshieteo')
-    elif msg == 'alby':
-        update.message.reply_text('Ma che sei /drogato?')
-    elif msg in ('j4nn0', 'j4nno'):
+    if msg in ('j4nn0', 'j4nno'):
         update.message.reply_text("H1 f4th3r")
     elif msg == 'gianno':
         update.message.reply_text('Hi father')
-    elif msg == 'dio':
-        update.message.reply_text('Merda')
-    elif msg == 'ciao':
-        update.message.reply_text('Ciao ' + update.message.from_user.username)
-    elif msg == 'hello':
-        update.message.reply_text('Hello ' + update.message.from_user.username)
-    elif msg == 'grazie':
-        update.message.reply_text('Nessun problema padrone. Sono al tuo servizio')
     elif msg in ('thanks', 'thank you', 'ty', 'thank you so much'):
         update.message.reply_text("No problem master. I'm at your service")
-
     else:
         update.message.reply_text("Sorry I can't understand. Press /help for more info")
 
