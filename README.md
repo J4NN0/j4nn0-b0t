@@ -16,10 +16,10 @@ Check it out on telegram: [@J4NN0_Bot](http://telegram.me/J4NN0_Bot)
 [![Watch the video](https://img.youtube.com/vi/2pSjPOuMDhk/maxresdefault.jpg)](https://youtu.be/2pSjPOuMDhk)
 
 # Table of Contents
-- [Database](https://github.com/J4NN0/j4nn0-b0t#database)
-- [BOT usage](https://github.com/J4NN0/j4nn0-b0t#bot-usage)
-- [How to host BOT on Heroku](https://github.com/J4NN0/j4nn0-b0t#how-to-host-bot-on-heroku)
-- [Resources](https://github.com/J4NN0/j4nn0-b0t#resources)
+- [Database](#database)
+- [BOT usage](#bot-usage)
+- [How to host BOT on Heroku](#how-to-host-bot-on-heroku)
+- [Resources](#resources)
 
 # Database
 
